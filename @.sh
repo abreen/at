@@ -25,9 +25,9 @@ print_room_header() {
     msg="$2"
 
     if test $COLORS; then
-        echo -n "$YELLOW""@""$BLUE""$room""$RESET"
+        echo -n "$BLUE""$room""$RESET"
     else
-        echo -n "@$room"
+        echo -n "$room"
     fi
 
     if test ! -z "$msg"; then
@@ -125,11 +125,6 @@ if test $# -gt 0; then
     esac
 fi
 
-touch "$LINENUM_FILE"
-
-tmp_linenum="$HOME/.@.temp"
-touch "$tmp_linenum"
-
 room="$1"
 
 if test $# -eq 1; then
@@ -142,7 +137,13 @@ if test $# -eq 1; then
 
     print_room_header $room 'recent history'
     tail -n 10 "$room_path"
+    exit 0
 fi
+
+touch "$LINENUM_FILE"
+
+tmp_linenum="$HOME/.@.temp"
+touch "$tmp_linenum"
 
 if test $# -gt 1; then
     # send a message to a room

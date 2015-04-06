@@ -38,7 +38,7 @@ Usage
     @: auto-joining 'general'
     [abreen@tuvok] # see a recent history of messages by supplying room name
     [abreen@tuvok] @ general
-    @general (recent history)
+    general (recent history)
      7:14:24 abreen: hello world
     [abreen@tuvok] # see joined rooms by using --rooms
     [abreen@tuvok] @ --rooms
